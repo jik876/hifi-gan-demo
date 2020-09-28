@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Audio samples from "HiFi-GAN: Generative Adversarial Networks for Efficient and High Fidelity Speech Synthesis"</title>
+    <meta charset="UTF-8">
+    <title>HiFi-GAN: Generative Adversarial Networks for Efficient and High Fidelity Speech Synthesis</title>
+    <style>
+        red {color: red}
+        audio {width: 250px}
+    </style>
+  </head>
+  <body>
+    <article>
+      <header>
+        <h1>Audio samples from "HiFi-GAN: Generative Adversarial Networks for Efficient and High Fidelity Speech Synthesis"</h1>
+      </header>
+    </article>
+
+<!--    <p><b>Paper:</b> <a href="">arXiv</a></p>-->
+<!--    <p><b>Authors</b>: </p>-->
+
+    <div>
+      <b>Abstract:</b>
+      Several recent studies on speech synthesis have employed generative adversarial networks (GANs) to produce raw waveforms.
+        Although such methods improve the sampling efficiency and memory usage,
+        their sample quality has not yet reached that of autoregressive and flow-based generative models.
+        In this study, we propose HiFi-GAN, which achieves both efficient and high-fidelity speech synthesis.
+        As speech audio consists of sinusoidal signals with various periods, we demonstrate that modeling periodic patterns of an audio is crucial for enhancing sample quality.
+        A subjective human evaluation (mean opinion score, MOS) of a single speaker dataset indicates
+        that our proposed method demonstrates similarity to human quality while generating 22.05 kHz high-fidelity audio 167.9 times faster
+        than real-time on a single V100 GPU. We further show the generality of HiFi-GAN to the mel-spectrogram inversion of unseen speakers and end-to-end speech synthesis.
+        Finally, a small footprint version of HiFi-GAN generates samples 13.4 times faster than real time on CPU with comparable quality to an autoregressive counterpart.
+    <p></p>
+    </div>
+
+    &nbsp;
+
+    <p class="toc_title">Contents</p>
+    <div id="toc_container">
+    <ul>
+      <li><a href="#ss">Single Speaker (LJ Speech Dataset)</a></li>
+      <li><a href="#ms">Unseen Speakers (VCTK Dataset)</a></li>
+      <li><a href="#e2e">End-to-end Speech Synthesis (LJ Speech Dataset)</a></li>
+      <li><a href="#as">Ablation Studies (LJ Speech Dataset)</a></li>
+    </ul>
+    </div>
+
+    <p>&nbsp;</p>
+
+    <div>
+      <a name="ss"><h2>Single Speaker (LJ Speech Dataset)</h2></a>
+      <hr>
+      <table>
+        <tbody>
+        <tr>
+          <td nowrap width="160">Ground Truth</td>
+          <td><audio controls="" preload="none"><source src="samples/ss/GT/ss_gt_1.wav"></audio></td>
+          <td><audio controls="" preload="none"><source src="samples/ss/GT/ss_gt_2.wav"></audio></td>
+          <td><audio controls="" preload="none"><source src="samples/ss/GT/ss_gt_3.wav"></audio></td>
+          <td><audio controls="" preload="none"><source src="samples/ss/GT/ss_gt_4.wav"></audio></td>
+          <td><audio controls="" preload="none"><source src="samples/ss/GT/ss_gt_5.wav"></audio></td>
+        </tr>
+        <tr>
+          <td nowrap>WaveNet (MoL)
+          <td><audio controls="" preload="none"><source src="samples/ss/WN/ss_wn_1.wav"></audio></td>
+          <td><audio controls="" preload="none"><source src="samples/ss/WN/ss_wn_2.wav"></audio></td>
+          <td><audio controls="" preload="none"><source src="samples/ss/WN/ss_wn_3.wav"></audio></td>
+          <td><audio controls="" preload="none"><source src="samples/ss/WN/ss_wn_4.wav"></audio></td>
+          <td><audio controls="" preload="none"><source src="samples/ss/WN/ss_wn_5.wav"></audio></td>
+        </tr>
+        <tr>
+          <td nowrap>WaveGlow
+          <td><audio controls="" preload="none"><source src="samples/ss/WG/ss_wg_1.wav"></audio></td>
+          <td><audio controls="" preload="none"><source src="samples/ss/WG/ss_wg_2.wav"></audio></td>
+          <td><audio controls="" preload="none"><source src="samples/ss/WG/ss_wg_3.wav"></audio></td>
+          <td><audio controls="" preload="none"><source src="samples/ss/WG/ss_wg_4.wav"></audio></td>
+          <td><audio controls="" preload="none"><source src="samples/ss/WG/ss_wg_5.wav"></audio></td>
+        </tr>
+        <tr>
+          <td nowrap>MelGAN
+          <td><audio controls="" preload="none"><source src="samples/ss/MG/ss_mg_1.wav"></audio></td>
+          <td><audio controls="" preload="none"><source src="samples/ss/MG/ss_mg_2.wav"></audio></td>
+          <td><audio controls="" preload="none"><source src="samples/ss/MG/ss_mg_3.wav"></audio></td>
+          <td><audio controls="" preload="none"><source src="samples/ss/MG/ss_mg_4.wav"></audio></td>
+          <td><audio controls="" preload="none"><source src="samples/ss/MG/ss_mg_5.wav"></audio></td>
+        </tr>
+        <tr>
+          <td nowrap>HiFi-GAN V1 (ours)
+          <td><audio controls="" preload="none"><source src="samples/ss/HGAN_V1/ss_hgan_v1_1.wav"></audio></td>
+          <td><audio controls="" preload="none"><source src="samples/ss/HGAN_V1/ss_hgan_v1_2.wav"></audio></td>
+          <td><audio controls="" preload="none"><source src="samples/ss/HGAN_V1/ss_hgan_v1_3.wav"></audio></td>
+          <td><audio controls="" preload="none"><source src="samples/ss/HGAN_V1/ss_hgan_v1_4.wav"></audio></td>
+          <td><audio controls="" preload="none"><source src="samples/ss/HGAN_V1/ss_hgan_v1_5.wav"></audio></td>
+        </tr>
+        <tr>
+          <td nowrap>HiFi-GAN V2 (ours)
+          <td><audio controls="" preload="none"><source src="samples/ss/HGAN_V2/ss_hgan_v2_1.wav"></audio></td>
+          <td><audio controls="" preload="none"><source src="samples/ss/HGAN_V2/ss_hgan_v2_2.wav"></audio></td>
+          <td><audio controls="" preload="none"><source src="samples/ss/HGAN_V2/ss_hgan_v2_3.wav"></audio></td>
+          <td><audio controls="" preload="none"><source src="samples/ss/HGAN_V2/ss_hgan_v2_4.wav"></audio></td>
+          <td><audio controls="" preload="none"><source src="samples/ss/HGAN_V2/ss_hgan_v2_5.wav"></audio></td>
+        </tr>
+        <tr>
+          <td nowrap>HiFi-GAN V3 (ours)
+          <td><audio controls="" preload="none"><source src="samples/ss/HGAN_V3/ss_hgan_v3_1.wav"></audio></td>
+          <td><audio controls="" preload="none"><source src="samples/ss/HGAN_V3/ss_hgan_v3_2.wav"></audio></td>
+          <td><audio controls="" preload="none"><source src="samples/ss/HGAN_V3/ss_hgan_v3_3.wav"></audio></td>
+          <td><audio controls="" preload="none"><source src="samples/ss/HGAN_V3/ss_hgan_v3_4.wav"></audio></td>
+          <td><audio controls="" preload="none"><source src="samples/ss/HGAN_V3/ss_hgan_v3_5.wav"></audio></td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+    <br><br>
+    <div>
+      <a name="ms"><h2>Unseen Speakers (VCTK Dataset)</h2></a>
+      <hr>
+      <table>
+        <tbody>
+        <tr>
+          <td nowrap width="160">Ground Truth</td>
+          <td><audio controls="" preload="none"><source src="samples/ms/GT/ms_gt_1.wav"></audio></td>
+          <td><audio controls="" preload="none"><source src="samples/ms/GT/ms_gt_2.wav"></audio></td>
+          <td><audio controls="" preload="none"><source src="samples/ms/GT/ms_gt_3.wav"></audio></td>
+          <td><audio controls="" preload="none"><source src="samples/ms/GT/ms_gt_4.wav"></audio></td>
+          <td><audio controls="" preload="none"><source src="samples/ms/GT/ms_gt_5.wav"></audio></td>
+        </tr>
+        <tr>
+          <td nowrap>WaveNet (MoL)
+          <td><audio controls="" preload="none"><source src="samples/ms/WN/ms_wn_1.wav"></audio></td>
+          <td><audio controls="" preload="none"><source src="samples/ms/WN/ms_wn_2.wav"></audio></td>
+          <td><audio controls="" preload="none"><source src="samples/ms/WN/ms_wn_3.wav"></audio></td>
+          <td><audio controls="" preload="none"><source src="samples/ms/WN/ms_wn_4.wav"></audio></td>
+          <td><audio controls="" preload="none"><source src="samples/ms/WN/ms_wn_5.wav"></audio></td>
+        </tr>
+        <tr>
+          <td nowrap>WaveGlow
+          <td><audio controls="" preload="none"><source src="samples/ms/WG/ms_wg_1.wav"></audio></td>
+          <td><audio controls="" preload="none"><source src="samples/ms/WG/ms_wg_2.wav"></audio></td>
+          <td><audio controls="" preload="none"><source src="samples/ms/WG/ms_wg_3.wav"></audio></td>
+          <td><audio controls="" preload="none"><source src="samples/ms/WG/ms_wg_4.wav"></audio></td>
+          <td><audio controls="" preload="none"><source src="samples/ms/WG/ms_wg_5.wav"></audio></td>
+        </tr>
+        <tr>
+          <td nowrap>MelGAN
+          <td><audio controls="" preload="none"><source src="samples/ms/MG/ms_mg_1.wav"></audio></td>
+          <td><audio controls="" preload="none"><source src="samples/ms/MG/ms_mg_2.wav"></audio></td>
+          <td><audio controls="" preload="none"><source src="samples/ms/MG/ms_mg_3.wav"></audio></td>
+          <td><audio controls="" preload="none"><source src="samples/ms/MG/ms_mg_4.wav"></audio></td>
+          <td><audio controls="" preload="none"><source src="samples/ms/MG/ms_mg_5.wav"></audio></td>
+        </tr>
+        <tr>
+          <td nowrap>HiFi-GAN V1 (ours)
+          <td><audio controls="" preload="none"><source src="samples/ms/HGAN_V1/ms_hgan_v1_1.wav"></audio></td>
+          <td><audio controls="" preload="none"><source src="samples/ms/HGAN_V1/ms_hgan_v1_2.wav"></audio></td>
+          <td><audio controls="" preload="none"><source src="samples/ms/HGAN_V1/ms_hgan_v1_3.wav"></audio></td>
+          <td><audio controls="" preload="none"><source src="samples/ms/HGAN_V1/ms_hgan_v1_4.wav"></audio></td>
+          <td><audio controls="" preload="none"><source src="samples/ms/HGAN_V1/ms_hgan_v1_5.wav"></audio></td>
+        </tr>
+        <tr>
+          <td nowrap>HiFi-GAN V2 (ours)
+          <td><audio controls="" preload="none"><source src="samples/ms/HGAN_V2/ms_hgan_v2_1.wav"></audio></td>
+          <td><audio controls="" preload="none"><source src="samples/ms/HGAN_V2/ms_hgan_v2_2.wav"></audio></td>
+          <td><audio controls="" preload="none"><source src="samples/ms/HGAN_V2/ms_hgan_v2_3.wav"></audio></td>
+          <td><audio controls="" preload="none"><source src="samples/ms/HGAN_V2/ms_hgan_v2_4.wav"></audio></td>
+          <td><audio controls="" preload="none"><source src="samples/ms/HGAN_V2/ms_hgan_v2_5.wav"></audio></td>
+        </tr>
+        <tr>
+          <td nowrap>HiFi-GAN V3 (ours)
+          <td><audio controls="" preload="none"><source src="samples/ms/HGAN_V2/ms_hgan_v2_1.wav"></audio></td>
+          <td><audio controls="" preload="none"><source src="samples/ms/HGAN_V2/ms_hgan_v2_2.wav"></audio></td>
+          <td><audio controls="" preload="none"><source src="samples/ms/HGAN_V2/ms_hgan_v2_3.wav"></audio></td>
+          <td><audio controls="" preload="none"><source src="samples/ms/HGAN_V2/ms_hgan_v2_4.wav"></audio></td>
+          <td><audio controls="" preload="none"><source src="samples/ms/HGAN_V2/ms_hgan_v2_5.wav"></audio></td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+    <br><br>
+    <div>
+      <a name="e2e"><h2>End-to-end Speech Synthesis (LJ Speech Dataset)</h2></a>
+      <hr>
+      <table>
+        <tbody>
+        <tr>
+          <td nowrap width="160">Ground Truth</td>
+          <td><audio controls="" preload="none"><source src="samples/e2e/GT/e2e_gt_1.wav"></audio></td>
+          <td><audio controls="" preload="none"><source src="samples/e2e/GT/e2e_gt_2.wav"></audio></td>
+          <td><audio controls="" preload="none"><source src="samples/e2e/GT/e2e_gt_3.wav"></audio></td>
+          <td><audio controls="" preload="none"><source src="samples/e2e/GT/e2e_gt_4.wav"></audio></td>
+          <td><audio controls="" preload="none"><source src="samples/e2e/GT/e2e_gt_5.wav"></audio></td>
+        </tr>
+        <tr>
+          <td nowrap>WaveGlow<br>(fine-tuned)
+          <td><audio controls="" preload="none"><source src="samples/e2e/WG_FT/e2e_wg_ft_1.wav"></audio></td>
+          <td><audio controls="" preload="none"><source src="samples/e2e/WG_FT/e2e_wg_ft_2.wav"></audio></td>
+          <td><audio controls="" preload="none"><source src="samples/e2e/WG_FT/e2e_wg_ft_3.wav"></audio></td>
+          <td><audio controls="" preload="none"><source src="samples/e2e/WG_FT/e2e_wg_ft_4.wav"></audio></td>
+          <td><audio controls="" preload="none"><source src="samples/e2e/WG_FT/e2e_wg_ft_5.wav"></audio></td>
+        </tr>
+        <tr>
+          <td nowrap>HiFi-GAN V1 (ours)<br>(fine-tuned)
+          <td><audio controls="" preload="none"><source src="samples/e2e/HGAN_V1_FT/e2e_hgan_v1_ft_1.wav"></audio></td>
+          <td><audio controls="" preload="none"><source src="samples/e2e/HGAN_V1_FT/e2e_hgan_v1_ft_2.wav"></audio></td>
+          <td><audio controls="" preload="none"><source src="samples/e2e/HGAN_V1_FT/e2e_hgan_v1_ft_3.wav"></audio></td>
+          <td><audio controls="" preload="none"><source src="samples/e2e/HGAN_V1_FT/e2e_hgan_v1_ft_4.wav"></audio></td>
+          <td><audio controls="" preload="none"><source src="samples/e2e/HGAN_V1_FT/e2e_hgan_v1_ft_5.wav"></audio></td>
+        </tr>
+        <tr>
+          <td nowrap>HiFi-GAN V2 (ours)<br>(fine-tuned)
+          <td><audio controls="" preload="none"><source src="samples/e2e/HGAN_V2_FT/e2e_hgan_v2_ft_1.wav"></audio></td>
+          <td><audio controls="" preload="none"><source src="samples/e2e/HGAN_V2_FT/e2e_hgan_v2_ft_2.wav"></audio></td>
+          <td><audio controls="" preload="none"><source src="samples/e2e/HGAN_V2_FT/e2e_hgan_v2_ft_3.wav"></audio></td>
+          <td><audio controls="" preload="none"><source src="samples/e2e/HGAN_V2_FT/e2e_hgan_v2_ft_4.wav"></audio></td>
+          <td><audio controls="" preload="none"><source src="samples/e2e/HGAN_V2_FT/e2e_hgan_v2_ft_5.wav"></audio></td>
+        </tr>
+        <tr>
+          <td nowrap>HiFi-GAN V3 (ours)<br>(fine-tuned)
+          <td><audio controls="" preload="none"><source src="samples/e2e/HGAN_V3_FT/e2e_hgan_v3_ft_1.wav"></audio></td>
+          <td><audio controls="" preload="none"><source src="samples/e2e/HGAN_V3_FT/e2e_hgan_v3_ft_2.wav"></audio></td>
+          <td><audio controls="" preload="none"><source src="samples/e2e/HGAN_V3_FT/e2e_hgan_v3_ft_3.wav"></audio></td>
+          <td><audio controls="" preload="none"><source src="samples/e2e/HGAN_V3_FT/e2e_hgan_v3_ft_4.wav"></audio></td>
+          <td><audio controls="" preload="none"><source src="samples/e2e/HGAN_V3_FT/e2e_hgan_v3_ft_5.wav"></audio></td>
+        </tr>
+        <tr>
+          <td colspan="6"><hr></td>
+        </tr>
+        <tr>
+          <td nowrap>WaveGlow<br>(w/o fine-tuning)
+          <td><audio controls="" preload="none"><source src="samples/e2e/WG/e2e_wg_1.wav"></audio></td>
+          <td><audio controls="" preload="none"><source src="samples/e2e/WG/e2e_wg_2.wav"></audio></td>
+          <td><audio controls="" preload="none"><source src="samples/e2e/WG/e2e_wg_3.wav"></audio></td>
+          <td><audio controls="" preload="none"><source src="samples/e2e/WG/e2e_wg_4.wav"></audio></td>
+          <td><audio controls="" preload="none"><source src="samples/e2e/WG/e2e_wg_5.wav"></audio></td>
+        </tr>
+        <tr>
+          <td nowrap>HiFi-GAN V1 (ours)<br>(w/o fine-tuning)
+          <td><audio controls="" preload="none"><source src="samples/e2e/HGAN_V1/e2e_hgan_v1_1.wav"></audio></td>
+          <td><audio controls="" preload="none"><source src="samples/e2e/HGAN_V1/e2e_hgan_v1_2.wav"></audio></td>
+          <td><audio controls="" preload="none"><source src="samples/e2e/HGAN_V1/e2e_hgan_v1_3.wav"></audio></td>
+          <td><audio controls="" preload="none"><source src="samples/e2e/HGAN_V1/e2e_hgan_v1_4.wav"></audio></td>
+          <td><audio controls="" preload="none"><source src="samples/e2e/HGAN_V1/e2e_hgan_v1_5.wav"></audio></td>
+        </tr>
+        <tr>
+          <td nowrap>HiFi-GAN V2 (ours)<br>(w/o fine-tuning)
+          <td><audio controls="" preload="none"><source src="samples/e2e/HGAN_V2/e2e_hgan_v2_1.wav"></audio></td>
+          <td><audio controls="" preload="none"><source src="samples/e2e/HGAN_V2/e2e_hgan_v2_2.wav"></audio></td>
+          <td><audio controls="" preload="none"><source src="samples/e2e/HGAN_V2/e2e_hgan_v2_3.wav"></audio></td>
+          <td><audio controls="" preload="none"><source src="samples/e2e/HGAN_V2/e2e_hgan_v2_4.wav"></audio></td>
+          <td><audio controls="" preload="none"><source src="samples/e2e/HGAN_V2/e2e_hgan_v2_5.wav"></audio></td>
+        </tr>
+        <tr>
+          <td nowrap>HiFi-GAN V3 (ours)<br>(w/o fine-tuning)
+          <td><audio controls="" preload="none"><source src="samples/e2e/HGAN_V3/e2e_hgan_v3_1.wav"></audio></td>
+          <td><audio controls="" preload="none"><source src="samples/e2e/HGAN_V3/e2e_hgan_v3_2.wav"></audio></td>
+          <td><audio controls="" preload="none"><source src="samples/e2e/HGAN_V3/e2e_hgan_v3_3.wav"></audio></td>
+          <td><audio controls="" preload="none"><source src="samples/e2e/HGAN_V3/e2e_hgan_v3_4.wav"></audio></td>
+          <td><audio controls="" preload="none"><source src="samples/e2e/HGAN_V3/e2e_hgan_v3_5.wav"></audio></td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+    <br><br>
+    <div>
+      <a name="as"><h2>Ablation Studies (LJ Speech Dataset)</h2></a>
+      <hr>
+      <table>
+        <tbody>
+        <tr>
+          <td nowrap>baseline
+          <td><audio controls="" preload="none"><source src="samples/as/baseline/as_baseline_1.wav"></audio></td>
+          <td><audio controls="" preload="none"><source src="samples/as/baseline/as_baseline_2.wav"></audio></td>
+          <td><audio controls="" preload="none"><source src="samples/as/baseline/as_baseline_3.wav"></audio></td>
+          <td><audio controls="" preload="none"><source src="samples/as/baseline/as_baseline_4.wav"></audio></td>
+          <td><audio controls="" preload="none"><source src="samples/as/baseline/as_baseline_5.wav"></audio></td>
+        </tr>
+        <tr>
+          <td nowrap>w/o MPD
+          <td><audio controls="" preload="none"><source src="samples/as/wo_MPD/as_wo_mpd_1.wav"></audio></td>
+          <td><audio controls="" preload="none"><source src="samples/as/wo_MPD/as_wo_mpd_2.wav"></audio></td>
+          <td><audio controls="" preload="none"><source src="samples/as/wo_MPD/as_wo_mpd_3.wav"></audio></td>
+          <td><audio controls="" preload="none"><source src="samples/as/wo_MPD/as_wo_mpd_4.wav"></audio></td>
+          <td><audio controls="" preload="none"><source src="samples/as/wo_MPD/as_wo_mpd_5.wav"></audio></td>
+        </tr>
+        <tr>
+          <td nowrap>w/o MSD
+          <td><audio controls="" preload="none"><source src="samples/as/wo_MSD/as_wo_msd_1.wav"></audio></td>
+          <td><audio controls="" preload="none"><source src="samples/as/wo_MSD/as_wo_msd_2.wav"></audio></td>
+          <td><audio controls="" preload="none"><source src="samples/as/wo_MSD/as_wo_msd_3.wav"></audio></td>
+          <td><audio controls="" preload="none"><source src="samples/as/wo_MSD/as_wo_msd_4.wav"></audio></td>
+          <td><audio controls="" preload="none"><source src="samples/as/wo_MSD/as_wo_msd_5.wav"></audio></td>
+        </tr>
+        <tr>
+          <td nowrap>w/o MRF
+          <td><audio controls="" preload="none"><source src="samples/as/wo_MRF/as_wo_mrf_1.wav"></audio></td>
+          <td><audio controls="" preload="none"><source src="samples/as/wo_MRF/as_wo_mrf_2.wav"></audio></td>
+          <td><audio controls="" preload="none"><source src="samples/as/wo_MRF/as_wo_mrf_3.wav"></audio></td>
+          <td><audio controls="" preload="none"><source src="samples/as/wo_MRF/as_wo_mrf_4.wav"></audio></td>
+          <td><audio controls="" preload="none"><source src="samples/as/wo_MRF/as_wo_mrf_5.wav"></audio></td>
+        </tr>
+        <tr>
+          <td nowrap>w/o Mel-Spectrogram Loss
+          <td><audio controls="" preload="none"><source src="samples/as/wo_L1/as_wo_l1_1.wav"></audio></td>
+          <td><audio controls="" preload="none"><source src="samples/as/wo_L1/as_wo_l1_2.wav"></audio></td>
+          <td><audio controls="" preload="none"><source src="samples/as/wo_L1/as_wo_l1_3.wav"></audio></td>
+          <td><audio controls="" preload="none"><source src="samples/as/wo_L1/as_wo_l1_4.wav"></audio></td>
+          <td><audio controls="" preload="none"><source src="samples/as/wo_L1/as_wo_l1_5.wav"></audio></td>
+        </tr>
+        </tbody>
+      </table>
+      <hr>
+      <table>
+        <tbody>
+        <tr>
+          <td nowrap width="198">MelGAN with MPD</td>
+          <td><audio controls="" preload="none"><source src="samples/as2/MG_MPD/as_mg_mpd_500_1.wav"></audio></td>
+          <td><audio controls="" preload="none"><source src="samples/as2/MG_MPD/as_mg_mpd_500_2.wav"></audio></td>
+          <td><audio controls="" preload="none"><source src="samples/as2/MG_MPD/as_mg_mpd_500_3.wav"></audio></td>
+          <td><audio controls="" preload="none"><source src="samples/as2/MG_MPD/as_mg_mpd_500_4.wav"></audio></td>
+          <td><audio controls="" preload="none"><source src="samples/as2/MG_MPD/as_mg_mpd_500_5.wav"></audio></td>
+        </tr>
+        <tr>
+          <td nowrap>MelGAN</td>
+          <td><audio controls="" preload="none"><source src="samples/as2/MG/as_mg_500_1.wav"></audio></td>
+          <td><audio controls="" preload="none"><source src="samples/as2/MG/as_mg_500_2.wav"></audio></td>
+          <td><audio controls="" preload="none"><source src="samples/as2/MG/as_mg_500_3.wav"></audio></td>
+          <td><audio controls="" preload="none"><source src="samples/as2/MG/as_mg_500_4.wav"></audio></td>
+          <td><audio controls="" preload="none"><source src="samples/as2/MG/as_mg_500_5.wav"></audio></td>
+        </tr>
+        </tbody>
+      </table>
+      <hr>
+      <table>
+        <tbody>
+        <tr>
+          <td nowrap width="198">HiFi-GAN V1 (500k step)</td>
+          <td><audio controls="" preload="none"><source src="samples/as2/V1_500/as_v1_500_1.wav"></audio></td>
+          <td><audio controls="" preload="none"><source src="samples/as2/V1_500/as_v1_500_2.wav"></audio></td>
+          <td><audio controls="" preload="none"><source src="samples/as2/V1_500/as_v1_500_3.wav"></audio></td>
+          <td><audio controls="" preload="none"><source src="samples/as2/V1_500/as_v1_500_4.wav"></audio></td>
+          <td><audio controls="" preload="none"><source src="samples/as2/V1_500/as_v1_500_5.wav"></audio></td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+    <br><br>
+  </body>
+</html>
